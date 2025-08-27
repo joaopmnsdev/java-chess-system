@@ -3,7 +3,7 @@ package org.example.chess;
 import org.example.boardgame.Board;
 import org.example.boardgame.Piece;
 
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
 
     private Color color;
 
@@ -15,4 +15,6 @@ public class ChessPiece extends Piece {
     public Color getColor() {
         return color;
     }
+
+
 }
