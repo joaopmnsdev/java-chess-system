@@ -5,6 +5,8 @@ import org.example.chess.ChessPiece;
 import org.example.chess.ChessPosition;
 import org.example.chess.Color;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -54,11 +56,17 @@ public class UI {
         printCapturedPieces(captured);
         System.out.println();
         System.out.println("Turn: " + chessMatch.getTurn());
-        System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
-        if(chessMatch.getCheck()){
-            System.out.println("CHECK");
-        }
 
+        if(!chessMatch.getCheck()) {
+            System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+            if (chessMatch.getCheck()) {
+                System.out.println("CHECK");
+            }
+        }
+        else {
+                System.out.println("CHECKMATE");
+                System.out.println("WINNER: " + chessMatch.getCurrentPlayer());
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces){
